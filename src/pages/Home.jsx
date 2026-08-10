@@ -7,6 +7,7 @@ import PartnerSection from "../components/PartnerSection";
 import '../styles/home.css'
 import CtaSection from "../components/CtaSection";
 import ContactSection from "../components/ContactSection";
+import MarketSection from "../components/MarketSection";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <AboutSection />
         <VisionMissionSection />
         <WhatWeDoSection />
+        <MarketSection />
         <PartnerSection />
         <CtaSection />
         <ContactSection />
