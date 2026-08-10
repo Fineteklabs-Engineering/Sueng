@@ -1,7 +1,7 @@
 .marketSection {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: max(100vh, 1160px);
   background: url("/images/market-bg.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -322,6 +322,7 @@
   color: var(--sueng-dark-olive);
   display: block;
 }
+
 
 /* iPad / tablet */
 @media (max-width: 1024px) {
