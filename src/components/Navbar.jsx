@@ -9,6 +9,7 @@ import {
   FiX,
 } from "react-icons/fi";
 import '../styles/navbar.css';
+import { s } from "motion/react-client";
 
 const menuVariants = {
   hidden: { x: "100%" },
@@ -47,6 +48,7 @@ const Navbar = () => {
   whoWeAre: true,
   ourProducts: false,
   contactUs: true,
+  shop: true,
 };
 
   return (
@@ -98,6 +100,15 @@ const Navbar = () => {
       Contact Us
     </NavLink>
   )}
+
+  {disabledLinks.shop ? (
+    <span className="navbarLink navbarLinkDisabled">Shop</span>
+  ) : (
+    <NavLink to="/shop" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
+      Shop
+    </NavLink>
+  )}
+  
 </nav>
 
 <div className="navbarActions">
@@ -192,6 +203,18 @@ const Navbar = () => {
     <NavLink to="/contact-us" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>
       Contact Us
     </NavLink>
+
+    
+  )}
+
+  {disabledLinks.shop ? (
+    <span className="navbarLink navbarLinkDisabled">Shop</span>
+  ) : (
+    <NavLink to="/shop" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>
+      Shop
+    </NavLink>
+
+    
   )}
 
   <div className="navbarMobileContact">
