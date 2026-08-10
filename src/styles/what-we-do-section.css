@@ -1,0 +1,219 @@
+.whatWeDoSection {
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: 
+   linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    ),
+    url("/images/textile-image.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+.whatWeDoInner {
+  padding: 0 clamp(20px, 6vw, 120px);
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+.whatWeDoLeft {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.whatWeDoEyebrowWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whatWeDoDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sueng-orange);
+}
+
+.whatWeDoEyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sueng-green-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.whatWeDoHeadline {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.whatWeDoIntro {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 380px;
+}
+
+.whatWeDoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.whatWeDoFlipCard {
+  perspective: 1200px;
+  height: 380px; 
+}
+
+.whatWeDoFlipInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: 16px;
+}
+
+.whatWeDoFlipCard:hover .whatWeDoFlipInner {
+  transform: rotateY(180deg);
+}
+
+.whatWeDoFlipFront,
+.whatWeDoFlipBack 
+{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.whatWeDoFlipFront {
+
+  background: yellow;
+ 
+}
+
+.whatWeDoCardImage {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.whatWeDoFrontOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.05) 60%
+  );
+  z-index: 2;
+}
+
+.whatWeDoCardTitle {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.whatWeDoFlipBack {
+  background:  #245F60;
+  transform: rotateY(180deg);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.whatWeDoBackTitle {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--sueng-green-light);
+}
+
+.whatWeDoBackText {
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.whatWeDoBackLink {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--sueng-orange);
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.25s ease;
+}
+
+.whatWeDoBackLink:hover {
+  color: var(--sueng-amber);
+}
+
+/* iPad / tablet */
+@media (max-width: 1024px) {
+  .whatWeDoInner {
+    grid-template-columns: 1fr;
+  }
+
+  .whatWeDoLeft {
+    position: static;
+    max-width: 100%;
+  }
+
+  .whatWeDoGrid {
+    margin-top: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .whatWeDoSection {
+    padding: 50px 0;
+  }
+
+  .whatWeDoHeadline {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  .whatWeDoGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+
+  .whatWeDoFlipCard {
+    height: 320px; /* was 260px */
+  }
+
+
+
+  .whatWeDoFlipCard:active .whatWeDoFlipInner {
+    transform: rotateY(180deg);
+  }
+}

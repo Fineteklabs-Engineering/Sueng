@@ -1,0 +1,247 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+  padding: 22px 0;
+}
+
+.navbarScrolled {
+  background: var(--sueng-dark-olive);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 12px 0;
+}
+
+.navbarInner {
+  width: 100%;
+  padding: 0 clamp(20px, 6vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarLogo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbarLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.navbarLink:hover,
+.navbarLinkActive {
+  color: var(--sueng-green-light);
+}
+
+.navbarDropdown {
+  position: relative;
+}
+
+.navbarDropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbarChevron {
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.navbarChevronOpen {
+  transform: rotate(180deg);
+}
+
+.navbarDropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 14px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  min-width: 190px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarDropdownMenu a {
+  color: var(--sueng-dark-olive);
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.navbarDropdownMenu a:hover {
+  background: var(--sueng-green-primary);
+  color: #ffffff;
+}
+
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbarIconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.navbarIconBtn:hover {
+  background: var(--sueng-orange);
+  border-color: var(--sueng-orange);
+  transform: translateY(-2px);
+}
+
+.navbarHamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 210;
+}
+
+.navbarMobileBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 150;
+}
+
+.navbarMobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(320px, 80vw);
+  background: var(--sueng-dark-olive);
+  z-index: 200;
+  padding: 100px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbarMobileMenu a {
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.navbarMobileDropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarMobileDropdownTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navbarMobileSubmenu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+  padding-left: 14px;
+  overflow: hidden;
+}
+
+.navbarMobileSubmenu a {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbarMobileContact {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navbarMobileContact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+/* iPad / tablet */
+@media (max-width: 1024px) {
+  .navbarLinks {
+    display: none;
+  }
+
+  .navbarLogo img {
+    height: 32px;
+  }
+
+  .navbarHamburger {
+    display: flex;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .navbarActions .navbarIconBtn {
+    display: none;
+  }
+
+  .navbarActions {
+    gap: 8px;
+  }
+}

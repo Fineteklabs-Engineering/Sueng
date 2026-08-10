@@ -1,0 +1,221 @@
+.contactSection {
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: #fafaf8;
+  display: flex;
+  align-items: center;
+}
+.contactInner {
+  width: 100%;
+  padding: 0 clamp(80px, 15vw, 320px);
+}
+
+.contactCard {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(46, 59, 30, 0.08);
+  min-height: 640px;
+}
+
+.contactLeft {
+  position: relative;
+  min-height: 480px;
+  background: url("/images/form-image.webp") center/cover no-repeat;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contactLeftOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    rgba(0, 118, 122, 0.25) 100%
+  );
+}
+
+.contactLeftContent {
+  position: relative;
+  z-index: 1;
+  padding: clamp(32px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactEyebrowWrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.contactDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sueng-orange);
+}
+
+.contactEyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sueng-teal-dark);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contactHeadline {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1.25;
+  color: var(--sueng-dark-olive);
+}
+
+.contactLinks {
+  margin-top: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactLinksLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sueng-dark-olive);
+  margin-bottom: 4px;
+}
+
+.contactLinksText {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+.contactInlineLink {
+  color: var(--sueng-teal-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contactInlineLink:hover {
+  color: var(--sueng-orange);
+}
+
+.contactRight {
+  background: #eef5f5;
+  padding: clamp(32px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactFormTitle {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--sueng-dark-olive);
+  margin-bottom: 28px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactFieldGroup {
+  border-bottom: 1px solid #cfd9d9;
+  padding-bottom: 10px;
+}
+
+.contactSelect,
+.contactInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: var(--sueng-dark-olive);
+  padding: 4px 0;
+}
+
+.contactSelect {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%232E3B1E' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.contactInput::placeholder,
+.contactSelect:invalid {
+  color: #8a8a8a;
+}
+
+.contactSubmitBtn {
+  align-self: flex-end;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--sueng-dark-olive);
+  color: #ffffff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.contactSubmitBtn:hover {
+  background: var(--sueng-orange);
+  transform: translateY(-2px);
+}
+
+/* iPad / tablet */
+@media (max-width: 1024px) {
+  .contactCard {
+    grid-template-columns: 1fr;
+  }
+
+  .contactLeft {
+    min-height: 320px;
+  }
+  .contactInner {
+  width: 100%;
+  padding: 0 clamp(40px, 9vw, 180px);
+}
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .contactSection {
+    padding: 50px 0;
+  }
+
+  .contactCard {
+    border-radius: 16px;
+  }
+
+  .contactLeft {
+    min-height: 260px;
+  }
+
+  .contactHeadline {
+    font-size: clamp(1.4rem, 6vw, 1.7rem);
+  }
+
+  .contactRight {
+    padding: 28px 22px;
+  }
+}

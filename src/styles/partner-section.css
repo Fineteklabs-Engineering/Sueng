@@ -1,0 +1,232 @@
+.partnersSection {
+  position: relative;
+  width: 100%;
+  padding: clamp(70px, 9vw, 130px) 0;
+  background: url("/images/partner-image.png") center/cover no-repeat;
+  overflow: hidden;
+}
+
+.partnersOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 40, 40, 0.88) 0%,
+    rgba(0, 60, 60, 0.75) 60%,
+    rgba(0, 70, 70, 0.55) 100%
+  );
+  z-index: 0;
+}
+
+.partnersInner {
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(20px, 6vw, 120px);
+}
+
+.partnersHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: clamp(50px, 8vw, 100px);
+}
+
+.partnersHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.partnersEyebrowWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.partnersDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sueng-orange);
+}
+
+.partnersEyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sueng-green-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.partnersHeadline {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  color: #ffffff;
+  max-width: 520px;
+}
+
+.partnersArrows {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.partnersArrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.partnersArrowBtn:hover {
+  background: var(--sueng-orange);
+  border-color: var(--sueng-orange);
+  transform: translateY(-2px);
+}
+
+/* --- Timeline row: big active logo left, trailing smaller logos right --- */
+
+.partnersTimelineRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: clamp(30px, 5vw, 60px);
+}
+
+.partnersActiveLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(160px, 16vw, 240px);
+  height: clamp(110px, 10vw, 150px);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+}
+
+.partnersActiveLogoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.partnersTrailTrack {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 4px;
+}
+
+.partnersTrailLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.partnersTrailItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.partnersTrailDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  order: 2;
+}
+
+.partnersTrailLogoWrap {
+  order: 1;
+  width: clamp(70px, 6vw, 92px);
+  height: clamp(50px, 4.5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.partnersTrailLogoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(60%) brightness(1) contrast(1.05);
+  opacity: 0.95;
+}
+
+
+/* iPad / tablet */
+@media (max-width: 1024px) {
+  .partnersTimelineRow {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .partnersActiveLogo {
+    width: 180px;
+    height: 120px;
+  }
+
+  .partnersTrailTrack {
+    overflow-x: auto;
+    gap: 24px;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+  }
+
+  .partnersTrailItem {
+    flex: 0 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .partnersSection {
+    padding: 50px 0;
+  }
+
+  .partnersHeader {
+    flex-direction: column;
+  }
+
+  .partnersHeadline {
+    font-size: clamp(1.5rem, 6.5vw, 1.9rem);
+  }
+
+  .partnersActiveLogo {
+    width: 150px;
+    height: 100px;
+    padding: 18px;
+  }
+
+  .partnersTrailLogoWrap {
+    width: 60px;
+    height: 44px;
+  }
+}

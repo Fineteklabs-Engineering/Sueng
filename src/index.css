@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --sueng-green-primary: #00a651;
+  --sueng-green-light: #6dc067;
+  --sueng-dark-olive: #2e3b1e;
+  --sueng-teal-light: #57a6a6;
+  --sueng-teal-dark: #00767a;
+  --sueng-orange: #f1703c;
+  --sueng-amber: #f5a623;
+  --sueng-red: #e42320;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--sueng-dark-olive);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}

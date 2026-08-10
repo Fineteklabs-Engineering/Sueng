@@ -1,0 +1,157 @@
+.ctaSection {
+  width: 100%;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 6vw, 120px);
+  background: #ffffff;
+}
+
+.ctaCard {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaEyebrowWrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.ctaDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sueng-orange);
+}
+
+.ctaEyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sueng-teal-light);
+}
+
+.ctaHeadline {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.2;
+  color: var(--sueng-dark-olive);
+  max-width: 640px;
+  margin-bottom: 16px;
+}
+
+.ctaSubtext {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #7a7a7a;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.ctaBtnSolid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sueng-orange);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ctaBtnSolid:hover {
+  background: var(--sueng-orange);
+  transform: translateY(-2px);
+}
+
+.ctaBtnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--sueng-dark-olive);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 1.5px solid #d8d8d0;
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ctaBtnOutline:hover {
+  border-color: var(--sueng-dark-olive);
+  transform: translateY(-2px);
+}
+
+.ctaContactLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ctaContactLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.ctaContactLink:hover {
+  color: var(--sueng-teal-dark);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ctaCard {
+    border-radius: 20px;
+  }
+
+  .ctaHeadline {
+    font-size: clamp(1.5rem, 7vw, 1.9rem);
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaBtnSolid,
+  .ctaBtnOutline {
+    width: 100%;
+  }
+
+  .ctaContactLinks {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

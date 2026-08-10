@@ -1,0 +1,146 @@
+.aboutSection {
+  width: 100%;
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: #ffffff;
+}
+
+.aboutTop {
+  padding: 0 clamp(20px, 6vw, 120px);
+}
+
+.aboutEyebrowWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.aboutDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sueng-green-primary);
+}
+
+.aboutEyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sueng-dark-olive);
+  letter-spacing: 0.02em;
+}
+
+.aboutTopGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.aboutHeadline {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.2;
+  color: var(--sueng-dark-olive);
+}
+
+.aboutRight {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.aboutText {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+.aboutCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sueng-dark-olive);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--sueng-dark-olive);
+  padding-bottom: 4px;
+  transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+}
+
+.aboutCta:hover {
+  color: var(--sueng-green-primary);
+  border-color: var(--sueng-green-primary);
+  gap: 12px;
+}
+
+.aboutArrow {
+  font-size: 1rem;
+}
+
+.aboutValues {
+  margin-top: 10px;
+  padding-top: 22px;
+ 
+}
+
+.aboutValuesLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--sueng-green-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.aboutValuesList {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.aboutImageWrap {
+  margin-top: clamp(40px, 6vw, 70px);
+  padding: 0 clamp(20px, 6vw, 120px);
+}
+
+.aboutImage {
+  width: 100%;
+  height: clamp(280px, 40vw, 460px);
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* iPad / tablet */
+@media (max-width: 1024px) {
+  .aboutTopGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .aboutSection {
+    padding: 50px 0;
+  }
+
+  .aboutHeadline {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+  }
+
+  .aboutText {
+    font-size: 0.92rem;
+  }
+
+  .aboutImage {
+    height: 220px;
+    border-radius: 8px;
+  }
+}
