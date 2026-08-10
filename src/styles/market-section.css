@@ -330,11 +330,17 @@
     padding-bottom: 60px;
   }
 
+  .marketTopBar {
+    position: relative;
+    padding: 24px clamp(20px, 6vw, 60px) 20px;
+  }
+
   .marketCardStackWrap {
     position: relative;
     inset: auto;
-    padding: 140px clamp(20px, 6vw, 120px) 40px;
+    padding: 0 clamp(20px, 6vw, 60px) 20px;
     justify-content: flex-start;
+    margin-bottom: 40px;
   }
 
   .marketCardStack {
@@ -342,11 +348,18 @@
     flex-direction: row;
     overflow-x: auto;
     max-height: none;
+    gap: 20px;
+    padding-bottom: 12px;
+   
   }
 
   .marketCard {
-    min-width: 260px;
+    min-width: 280px;
     flex-shrink: 0;
+  }
+
+  .marketCardImageWrap {
+    height: 200px;
   }
 
   .marketSideActions {
@@ -357,13 +370,14 @@
     position: relative;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 clamp(20px, 6vw, 120px) 40px;
-    gap: 32px;
+    padding: 0 clamp(20px, 6vw, 60px) 40px;
+    gap: 28px;
   }
 
   .marketBottomRight {
     align-items: flex-start;
     width: 100%;
+    gap: 16px;
   }
 
   .marketStatBlock {
@@ -377,21 +391,38 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+    padding: 20px 20px 16px;
   }
 
   .marketTopActions {
     flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .marketPill,
+  .marketPillGhost {
+    font-size: 0.8rem;
+    padding: 8px 14px;
   }
 
   .marketCardStackWrap {
-    padding-top: 180px;
+    padding: 0 20px 16px;
+    margin-bottom: 32px;
   }
 
   .marketCard {
-    min-width: 220px;
+    min-width: 240px;
+  }
+
+  .marketCardImageWrap {
+    height: 170px;
   }
 
   .marketTitle {
     font-size: clamp(1.9rem, 9vw, 2.4rem);
+  }
+
+  .marketBottomBar {
+    padding: 0 20px 32px;
   }
 }
