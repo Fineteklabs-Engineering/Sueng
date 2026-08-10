@@ -74,7 +74,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div initial="hidden" animate="visible" variants={ctaVariants}>
-          <Link to="/who-we-are" className="heroCta">
+          <Link to="/" className="heroCta">
             Discover Sueng
           </Link>
         </motion.div>

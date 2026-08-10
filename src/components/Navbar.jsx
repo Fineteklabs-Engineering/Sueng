@@ -42,6 +42,13 @@ const Navbar = () => {
     setMobileProductsOpen(false);
   };
 
+
+  const disabledLinks = {
+  whoWeAre: true,
+  ourProducts: false,
+  contactUs: true,
+};
+
   return (
     <header className={`navbar ${scrolled ? "navbarScrolled" : ""}`}>
       <div className="navbarInner">
@@ -50,37 +57,49 @@ const Navbar = () => {
         </Link>
 
         <nav className="navbarLinks">
-          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
-            Home
-          </NavLink>
-          <NavLink to="/who-we-are" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
-            Who We Are
-          </NavLink>
+  <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
+    Home
+  </NavLink>
 
-          <div
-            className="navbarDropdown"
-            onMouseEnter={() => setProductsOpen(true)}
-            onMouseLeave={() => setProductsOpen(false)}
-          >
-            <span className={`navbarDropdownTrigger ${productsActive ? "navbarLinkActive" : ""}`}>
-              Our Products <FiChevronDown className="navbarChevron" />
-            </span>
-    {productsOpen && (
+  {disabledLinks.whoWeAre ? (
+    <span className="navbarLink navbarLinkDisabled">Who We Are</span>
+  ) : (
+    <NavLink to="/who-we-are" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
+      Who We Are
+    </NavLink>
+  )}
+
+  <div
+    className="navbarDropdown"
+    onMouseEnter={() => !disabledLinks.ourProducts && setProductsOpen(true)}
+    onMouseLeave={() => setProductsOpen(false)}
+  >
+ <span
+  className={`navbarDropdownTrigger ${productsActive ? "navbarLinkActive" : ""} ${disabledLinks.ourProducts ? "navbarLinkDisabled" : ""}`}
+>
+  Our Products <FiChevronDown className="navbarChevron" />
+</span>
+    {productsOpen && !disabledLinks.ourProducts && (
       <div className="navbarDropdownMenu">
-      <div className="navbarDropdownMenuInner">
-      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Apparel</NavLink>
-      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Packaging</NavLink>
-      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Printing</NavLink>
-      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Safety & PPEs</NavLink>
-    </div>
+        <div className="navbarDropdownMenuInner">
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Apparel</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Packaging</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Printing</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Safety & PPEs</NavLink>
+        </div>
+      </div>
+    )}
   </div>
-)}
-          </div>
 
-          <NavLink to="/contact-us" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
-            Contact Us
-          </NavLink>
-        </nav>
+  {disabledLinks.contactUs ? (
+    <span className="navbarLink navbarLinkDisabled">Contact Us</span>
+  ) : (
+    <NavLink to="/contact-us" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
+      Contact Us
+    </NavLink>
+  )}
+</nav>
+
 <div className="navbarActions">
   <div className="navbarIconWrap">
     <a href="mailto:info@sueng.com" className="navbarIconBtn" aria-label="Email us">
@@ -119,56 +138,73 @@ const Navbar = () => {
               onClick={closeMenu}
             />
 
-            <motion.nav
-              className="navbarMobileMenu"
-              variants={menuVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Home</NavLink>
-              <NavLink to="/who-we-are" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Who We Are</NavLink>
+           <motion.nav
+  className="navbarMobileMenu"
+  variants={menuVariants}
+  initial="hidden"
+  animate="visible"
+  exit="exit"
+>
+  <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>
+    Home
+  </NavLink>
 
-              <div className="navbarMobileDropdown">
-                <button
-                  className={`navbarMobileDropdownTrigger ${productsActive ? "navbarLinkActive" : ""}`}
-                  onClick={() => setMobileProductsOpen((prev) => !prev)}
-                >
-                  Our Products
-                  <FiChevronDown
-                    className={`navbarChevron ${mobileProductsOpen ? "navbarChevronOpen" : ""}`}
-                  />
-                </button>
+  {disabledLinks.whoWeAre ? (
+    <span className="navbarLink navbarLinkDisabled">Who We Are</span>
+  ) : (
+    <NavLink to="/who-we-are" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>
+      Who We Are
+    </NavLink>
+  )}
 
-                <AnimatePresence>
-                  {mobileProductsOpen && (
-                    <motion.div
-                      className="navbarMobileSubmenu"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                    >
-                      <NavLink to="/products/apparel" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Apparel</NavLink>
-                      <NavLink to="/products/packaging" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Packaging</NavLink>
-                      <NavLink to="/products/printing" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Printing</NavLink>
-                      <NavLink to="/products/safety-ppes" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Safety & PPEs</NavLink>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+  <div className="navbarMobileDropdown">
+  <button
+  className={`navbarMobileDropdownTrigger ${productsActive ? "navbarLinkActive" : ""} ${disabledLinks.ourProducts ? "navbarLinkDisabled" : ""}`}
+  onClick={() => !disabledLinks.ourProducts && setMobileProductsOpen((prev) => !prev)}
+>
+  Our Products
+  <FiChevronDown
+    className={`navbarChevron ${mobileProductsOpen ? "navbarChevronOpen" : ""}`}
+  />
+</button>
 
-              <NavLink to="/contact-us" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Contact Us</NavLink>
+    <AnimatePresence>
+      {mobileProductsOpen && !disabledLinks.ourProducts && (
+        <motion.div
+          className="navbarMobileSubmenu"
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Apparel</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Packaging</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Printing</NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>Safety & PPEs</NavLink>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
 
-              <div className="navbarMobileContact">
-                <a href="mailto:info@sueng.com" onClick={closeMenu}>
-                  <FiMessageCircle /> info@sueng.com
-                </a>
-                <a href="tel:+254722868219" onClick={closeMenu}>
-                  <FiPhone /> 0722 868219
-                </a>
-              </div>
-            </motion.nav>
+  {disabledLinks.contactUs ? (
+    <span className="navbarLink navbarLinkDisabled">Contact Us</span>
+  ) : (
+    <NavLink to="/contact-us" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"} onClick={closeMenu}>
+      Contact Us
+    </NavLink>
+  )}
+
+  <div className="navbarMobileContact">
+    <a href="mailto:info@sueng.com" onClick={closeMenu}>
+      <FiMessageCircle /> info@sueng.com
+    </a>
+    <a href="tel:+254722868219" onClick={closeMenu}>
+      <FiPhone /> 0722 868219
+    </a>
+  </div>
+</motion.nav>
+
+
           </>
         )}
       </AnimatePresence>

@@ -87,13 +87,13 @@ const ContactSection = () => {
                 <p className="contactLinksLabel">For partnership inquiries:</p>
                 <p className="contactLinksText">
                   Please visit our{" "}
-                  <Link to="/who-we-are" className="contactInlineLink">
+                  <Link to="/" className="contactInlineLink">
                     Who We Are page
                   </Link>
                 </p>
                 <p className="contactLinksText">
                   For product inquiries, see our{" "}
-                  <Link to="/products/apparel" className="contactInlineLink">
+                  <Link to="/" className="contactInlineLink">
                     Products page
                   </Link>
                 </p>

@@ -60,7 +60,7 @@ const CtaSection = () => {
           viewport={{ once: true, amount: 0.5 }}
           variants={fadeUp}
         >
-          <Link to="/contact-us" className="ctaBtnSolid">
+          <Link to="/" className="ctaBtnSolid">
             Get In Touch
           </Link>
           <a href="tel:+254722868219" className="ctaBtnOutline">

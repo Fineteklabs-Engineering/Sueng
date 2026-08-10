@@ -45,7 +45,7 @@ const Footer = () => {
               </a>
               
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/sueng-enterprises-ltd"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footerSocialBtn"
@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
                 
                 <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=100077272730049#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footerSocialBtn"
@@ -75,11 +75,11 @@ const Footer = () => {
             variants={fadeUp}
           >
             <p className="footerColumnTitle">Navigation</p>
-            <Link to="/who-we-are">Who We Are</Link>
-            <Link to="/products/apparel">Our Products</Link>
-            <Link to="/products/apparel">Apparel</Link>
-            <Link to="/products/packaging">Packaging</Link>
-            <Link to="/contact-us">Contact Us</Link>
+            <Link to="/">Who We Are</Link>
+            <Link to="/">Our Products</Link>
+            <Link to="/">Apparel</Link>
+            <Link to="/">Packaging</Link>
+            <Link to="/">Contact Us</Link>
           </motion.div>
 
           <motion.div

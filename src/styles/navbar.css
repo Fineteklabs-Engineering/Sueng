@@ -272,6 +272,17 @@
   transform: translateX(-50%) translateY(0);
 }
 
+/* Disabled link styles */
+.navbarLink.navbarLinkDisabled,
+.navbarDropdownTrigger.navbarLinkDisabled {
+  cursor: pointer;
+}
+
+.navbarMobileMenu .navbarLinkActive,
+.navbarMobileDropdownTrigger.navbarLinkActive {
+  color: var(--sueng-green-light);
+}
+
 /* iPad / tablet */
 @media (max-width: 1024px) {
   .navbarLinks {
