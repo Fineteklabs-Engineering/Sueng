@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Sueng Enterprises Ltd | Driven By Ideas</title>
+        <title>Sueng Group</title>
         <meta
           name="description"
           content="Sueng Enterprises Ltd is Kenya's trusted production house for branded apparel, packaging, printing, and safety wear, serving East Africa's biggest brands since 2005."
