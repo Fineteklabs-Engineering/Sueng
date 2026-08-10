@@ -78,7 +78,10 @@
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 14px;
+  padding-top: 14px; /* bridges the gap so hover never breaks */
+}
+
+.navbarDropdownMenuInner {
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
@@ -86,6 +89,18 @@
   padding: 10px 0;
   display: flex;
   flex-direction: column;
+}
+
+.navbarDropdownMenuInner a {
+  color: var(--sueng-dark-olive);
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.navbarDropdownMenuInner a:hover {
+  background: var(--sueng-green-primary);
+  color: #ffffff;
 }
 
 .navbarDropdownMenu a {
@@ -214,6 +229,47 @@
   align-items: center;
   gap: 10px;
   font-size: 0.95rem;
+}
+
+.navbarIconWrap {
+  position: relative;
+  display: flex;
+}
+
+.navbarTooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--sueng-green-primary);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 50;
+}
+
+.navbarTooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: var(--sueng-green-primary);
+}
+
+.navbarIconWrap:hover .navbarTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* iPad / tablet */

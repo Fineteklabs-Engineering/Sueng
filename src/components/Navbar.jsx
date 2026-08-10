@@ -65,37 +65,47 @@ const Navbar = () => {
             <span className={`navbarDropdownTrigger ${productsActive ? "navbarLinkActive" : ""}`}>
               Our Products <FiChevronDown className="navbarChevron" />
             </span>
-            {productsOpen && (
-              <div className="navbarDropdownMenu">
-                <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Apparel</NavLink>
-                <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Packaging</NavLink>
-                <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Printing</NavLink>
-                <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Safety & PPEs</NavLink>
-              </div>
-            )}
+    {productsOpen && (
+      <div className="navbarDropdownMenu">
+      <div className="navbarDropdownMenuInner">
+      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Apparel</NavLink>
+      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Packaging</NavLink>
+      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Printing</NavLink>
+      <NavLink to="/products" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>Safety & PPEs</NavLink>
+    </div>
+  </div>
+)}
           </div>
 
           <NavLink to="/contact-us" className={({ isActive }) => isActive ? "navbarLink navbarLinkActive" : "navbarLink"}>
             Contact Us
           </NavLink>
         </nav>
+<div className="navbarActions">
+  <div className="navbarIconWrap">
+    <a href="mailto:info@sueng.com" className="navbarIconBtn" aria-label="Email us">
+      <FiMessageCircle />
+    </a>
+    <span className="navbarTooltip">info@sueng.com</span>
+  </div>
 
-        <div className="navbarActions">
-          <a href="mailto:info@sueng.com" className="navbarIconBtn" aria-label="Email us">
-            <FiMessageCircle />
-          </a>
-          <a href="tel:+254722868219" className="navbarIconBtn" aria-label="Call us">
-            <FiPhone />
-          </a>
+  <div className="navbarIconWrap">
+    <a href="tel:+254722868219" className="navbarIconBtn" aria-label="Call us">
+      <FiPhone />
+    </a>
+    <span className="navbarTooltip">0722 868 219</span>
+  </div>
 
-          <button
-            className="navbarHamburger"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            {menuOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </div>
+  <button
+    className="navbarHamburger"
+    aria-label={menuOpen ? "Close menu" : "Open menu"}
+    onClick={() => setMenuOpen((prev) => !prev)}
+  >
+    {menuOpen ? <FiX /> : <FiMenu />}
+  </button>
+</div>
+
+
       </div>
 
       <AnimatePresence>
