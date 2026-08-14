@@ -11,13 +11,13 @@ const textVariants = {
   }),
 };
 
-const ctaVariants = {
-  hidden: { opacity: 0, scale: 0.75 },
-  visible: {
+const bottomVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (delay) => ({
     opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, delay: 0.9, ease: "easeOut" },
-  },
+    y: 0,
+    transition: { duration: 0.6, delay, ease: "easeOut" },
+  }),
 };
 
 const HeroSection = () => {
@@ -72,12 +72,44 @@ const HeroSection = () => {
           Kenya's trusted production house for branded apparel, packaging,
           printing, and safety wear - built for East Africa's biggest names.
         </motion.p>
+      </div>
 
-        <motion.div initial="hidden" animate="visible" variants={ctaVariants}>
+      <div className="heroBottomRow">
+        <motion.div
+          custom={0.8}
+          initial="hidden"
+          animate="visible"
+          variants={bottomVariants}
+        >
           <Link to="/" className="heroCta">
             Discover Sueng
           </Link>
         </motion.div>
+
+       <motion.div
+  className="heroStatsCard"
+  custom={0.95}
+  initial="hidden"
+  animate="visible"
+  variants={bottomVariants}
+>
+  <div className="statsImageCell">
+    <img src="https://res.cloudinary.com/gjpfbvzb/image/upload/v1786701985/sueng_enterprises_ltd_cover_ypprgr.jpg" alt="Sueng production floor" />
+    <span className="statsImageIcon">↗</span>
+  </div>
+  <div className="statsCell statsCellPrimary">
+    <span className="statsLabel">Years in Production</span>
+    <span className="statsValue">20+</span>
+  </div>
+  <div className="statsCell">
+    <span className="statsLabel">Brands Served</span>
+    <span className="statsValue">150+</span>
+  </div>
+  <div className="statsCell">
+    <span className="statsLabel">Units Produced Yearly</span>
+    <span className="statsValue">1M+</span>
+  </div>
+</motion.div>
       </div>
     </section>
   );
