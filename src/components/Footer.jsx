@@ -129,7 +129,7 @@ const Footer = () => {
 
       <div className="footerBottom">
         <div className="footerBottomInner">
-          <Link to="/privacy-policy" className="footerPrivacyLink">
+          <Link to="/" className="footerPrivacyLink">
             Privacy Policy
           </Link>
           <p className="footerCompanyName">Sueng Enterprises Limited</p>
